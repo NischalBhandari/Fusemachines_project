@@ -1,4 +1,4 @@
 Flask
 jinja2
-pymongo
+flask_pymongo
 

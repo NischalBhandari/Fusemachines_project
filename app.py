@@ -12,8 +12,9 @@ todos = db.todo
 
 @app.route("/")
 def home_page():
-	online_users = todos.find()
-	return render_template("index.html",t=title,h=heading)
+	user_collection = mongo.db.users
+	user_collection.insert({'name' : 'Nischal'})
+	return '<h1>Added a user</h1>'
 
 if __name__ == '__main__':
 	app.run()
