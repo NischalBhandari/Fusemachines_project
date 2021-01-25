@@ -15,6 +15,12 @@ https://docs.docker.com/engine/install/ubuntu/
 
 then type the following commands
 
+note: please download a version of docker-compose such that  >= 1.27.0
+
+If you get any errors in docker-compose build and docker-compose up use 
+
+*sudo docker-compose build and sudo docker-compose up  (this is not a good solution/some permission issues in docker-compose.yml )* 
+
  **docker-compose build**
 
 **docker-compose up**
@@ -62,9 +68,9 @@ now your database is ready
 
 Now as your database and application is ready. It should be running two containers you can check it with docker ps command
 
-after this you have to access the ip address of the host machine running the docker container with port 8080
+after this you have to access the ip address of the host machine running the docker container with port 5000
 
-For eg: http://192.168.1.110:8080
+For eg: http://192.168.1.110:5000
 
 
 
