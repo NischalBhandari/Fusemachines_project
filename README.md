@@ -32,7 +32,7 @@ This command will give you the output of running containers in the system with t
 
 **docker exec -it $CONTAINER_ID bash **
 
-For e.g: docker exec -it 0bc153158b8e bash
+*For e.g: docker exec -it 0bc153158b8e bash*
 
 Then choose the CONTAINER_ID with the IMAGE mongo:4.0.8
 then implement the following command
@@ -47,7 +47,13 @@ you can now access the database commandline
 
 **Inside the Database commandline place following commands**
 **use flaskdb**
+
+
+
 **db.createUser({user: 'flaskuser', pwd: 'fiberoptics12', roles: [{role: 'readWrite', db: 'flaskdb'}]})**
+
+
+
 **exit**
 
 now your database is ready 
