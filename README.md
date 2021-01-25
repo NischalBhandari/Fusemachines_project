@@ -17,9 +17,21 @@ then type the following commands
 
 note: please download a version of docker-compose such that  >= 1.27.0
 
+*First also setup your user permissions for docker*
+
+*if docker group doesnot exist then* 
+
+*sudo groupadd docker*
+
+*sudo usermod -aG docker ${USER}*
+
+*Then logout or restart the system*
+
 If you get any errors in docker-compose build and docker-compose up use 
 
 *sudo docker-compose build and sudo docker-compose up  (this is not a good solution/some permission issues in docker-compose.yml )* 
+
+
 
  **docker-compose build**
 
@@ -52,6 +64,7 @@ After entering the password you created  in the file docker-compose.yml (default
 you can now access the database commandline
 
 **Inside the Database commandline place following commands**
+
 **use flaskdb**
 
 
