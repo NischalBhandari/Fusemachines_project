@@ -1,26 +1,82 @@
 # Fusemachines_project
-<h1> To Create a user for your Database</h1>
+<h1>Steps:
+
 download the repo from github from https://github.com/NischalBhandari/Fusemachines_project.git
-then run the docker-compose build
-then run docker-compose up 
 
-This will run two containers one with mongodb and one with the python application 
-Then use the following command 
-docker ps 
-This command will give you the output of running containers in the system
-Then choose the container with the tag mongo
+If you do not have docker or docker-compose please check out resources in the internet.
+
+Here are some links 
+
+https://docs.docker.com/compose/install/
+
+https://docs.docker.com/engine/install/ubuntu/
+
+
+
+then type the following commands
+
+ **docker-compose build**
+
+**docker-compose up**
+
+
+
+<h2> Setup your database</h2> 
+
+The above commands will run two docker containers one with mongodb and one with the python application 
+
+**Then use the following command** 
+**docker ps** 
+
+This command will give you the output of running containers in the system with the $CONTAINER_ID
+
+**docker exec -it $CONTAINER_ID bash **
+
+For e.g: docker exec -it 0bc153158b8e bash
+
+Then choose the CONTAINER_ID with the IMAGE mongo:4.0.8
 then implement the following command
-docker exec -it $TAG_NAME bash
+
 then inside the database use the command 
-mongo -u nischal -p
+
+**mongo -u mongodbuser -p**
+
 This will prompt you for the password
-After entering the password you create in the file (default is fiberoptics12)
-you can now access the database
+After entering the password you created  in the file docker-compose.yml (default is fiberoptics12)
+you can now access the database commandline
 
-**Use the following commands**
-use flaskdb
-db.createUser({user: 'flaskuser', pwd: 'fiberoptics12', roles: [{role: 'readWrite', db: 'flaskdb'}]})
-exit
-
+**Inside the Database commandline place following commands**
+**use flaskdb**
+**db.createUser({user: 'flaskuser', pwd: 'fiberoptics12', roles: [{role: 'readWrite', db: 'flaskdb'}]})**
+**exit**
 
 now your database is ready 
+
+<h2>Running the program
+
+Now as your database and application is ready. It should be running two containers you can check it with docker ps command
+
+after this you have to access the ip address of the host machine running the docker container with port 8080
+
+For eg: http://192.168.1.110:8080
+
+
+
+<h2>The Application</h2>
+
+The application is a simple todo app that can add list of things todo in a day.
+
+It also has the functionality of deleting the task and delete all the tasks at once.
+
+The app is very simple but serves its purpose of showing the use of docker containers
+
+
+
+<h2>Jenkinsfile</h2>
+
+
+
+The jenkinsfile is a file that describes how we can build this application using jenkins 
+
+For using the jenkinsfile till now only the dockerconainer is added till now 
+
